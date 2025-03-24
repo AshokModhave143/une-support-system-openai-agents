@@ -1,0 +1,29 @@
+.messageList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.messageItemContainer {
+  display: flex;
+  max-width: 70%;
+}
+
+.alignRight {
+  margin-left: auto;
+  text-align: left;
+}
+
+.alignLeft {
+  margin-right: auto;
+  text-align: left;
+}
+
+.noMessagesAvailable {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+  margin-top: 2rem;
+}

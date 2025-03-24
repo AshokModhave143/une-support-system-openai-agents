@@ -1,0 +1,47 @@
+.chatHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+
+  &__title {
+    justify-content: flex-start;
+
+    h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      color: #333;
+    }
+  }
+
+  &__userInfo {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+
+    &__name {
+      color: #333;
+    }
+
+    &__status {
+      font-size: 0.9rem;
+      color: #fff;
+
+      padding: 0.2rem;
+      border-radius: 12px;
+    }
+  }
+}
+
+.active {
+  background-color: green;
+}
+
+.inActive {
+  background-color: gray;
+}
