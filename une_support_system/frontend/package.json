@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
-  "description": "",
+  "description": "A dynamic AI-powered multi-agent chat platform for university student support, built with React, TypeScript, and Vite.",
   "license": "MIT",
   "scripts": {
     "start": "vite",
@@ -22,5 +22,16 @@
     "sass-embedded": "^1.86.0",
     "typescript": "^5.8.2",
     "vite": "^6.2.0"
-  }
+  },
+  "keywords": [
+    "AI",
+    "multi-agent",
+    "chat platform",
+    "university support",
+    "React",
+    "TypeScript",
+    "Vite",
+    "OpenAI",
+    "OpenAI-Agents"
+  ]
 }

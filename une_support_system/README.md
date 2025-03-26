@@ -140,6 +140,18 @@ The UNE Support System is a web-based application designed to provide support to
 
 ---
 
+## Preview of Application
+
+![Chat UI window](./frontend/public/assets/images/chat_default.png)
+
+![Chat agent response](./frontend/public/assets/images/chat_agent_response.png)
+
+![Chat agent handover](./frontend/public/assets/images/chat_agent_handover.png)
+
+![Chat Multi-language response (Spanish agent)](./frontend/public/assets/images/chat_multi_language.png)
+
+---
+
 ## Testing
 
 > Note: No tests written for backend and frontend

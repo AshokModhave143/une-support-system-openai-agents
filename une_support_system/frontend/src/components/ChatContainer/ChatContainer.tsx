@@ -6,6 +6,7 @@ import { ChatHeader } from "../ChatHeader";
 import styles from "./ChatContainer.module.scss";
 import { AiAgentsApiService } from "../../api/services/aiAgentsApi";
 import { useState } from "react";
+import { ChatAlertMessage } from "../ChatErrorMessage";
 
 interface MessageContainerProps {}
 
@@ -28,15 +29,20 @@ export const ChatContainer = (_props: MessageContainerProps) => {
   };
 
   return (
-    <div className={styles.chatContainer}>
-      <div className={styles.chatHeader}>
-        <ChatHeader activeStudent={activeStudent} />
-      </div>
-      <div className={styles.chatContent}>
-        <ChatMessageList messages={messages} />
-      </div>
-      <div className={styles.chatFooter}>
-        <ChatMessageInput onSend={handleMessageSend} />
+    <div className={styles.chat}>
+      <div className={styles.chatContainer}>
+        <div className={styles.chatHeader}>
+          <ChatHeader activeStudent={activeStudent} />
+        </div>
+        <div className={styles.chatContent}>
+          <ChatMessageList messages={messages} />
+          {error && (
+            <ChatAlertMessage message={{ type: "error", description: error }} />
+          )}
+        </div>
+        <div className={styles.chatFooter}>
+          <ChatMessageInput onSend={handleMessageSend} />
+        </div>
       </div>
     </div>
   );

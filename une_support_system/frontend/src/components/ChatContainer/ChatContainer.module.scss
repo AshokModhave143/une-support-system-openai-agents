@@ -1,31 +1,37 @@
-.chatContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 1rem;
-  border-radius: 8px;
+.chat {
+  width: 700px;
+  height: 80vh;
+  margin: 1rem auto;
 
-  .chatHeader {
-    display: flex;
-    flex-direction: row;
-    height: 4rem;
-    background-color: #e0e0e0;
-  }
-
-  .chatContent {
+  .chatContainer {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 1rem;
-  }
+    width: 100%;
+    border-radius: 8px;
 
-  .chatFooter {
-    display: flex;
-    flex-direction: row;
-    height: 10%;
-    background-color: #e0e0e0;
-    padding: 0.5rem 0;
+    .chatHeader {
+      display: flex;
+      flex-direction: row;
+      height: 4rem;
+      background-color: #e0e0e0;
+    }
+
+    .chatContent {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 1rem;
+    }
+
+    .chatFooter {
+      display: flex;
+      flex-direction: row;
+      height: 10%;
+      background-color: #e0e0e0;
+      padding: 1rem 0;
+    }
   }
 }

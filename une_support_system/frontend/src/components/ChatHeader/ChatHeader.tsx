@@ -9,7 +9,7 @@ export const ChatHeader = ({ activeStudent }: ChatHeaderProps) => {
   return (
     <div className={styles.chatHeader}>
       <div className={styles.chatHeader__title}>
-        <h1>Course Support Chat</h1>
+        <h1>Multi-Agent Chat Platform</h1>
       </div>
 
       <div className={styles.chatHeader__userInfo}>
