@@ -28,7 +28,13 @@ export const ChatMessageInput = ({ onSend }: ChatMessageInputProps) => {
   };
 
   return (
-    <div className={styles.messageInputContainer}>
+    <form
+      className={styles.messageInputContainer}
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleSend();
+      }}
+    >
       <input
         type="text"
         placeholder="Type your message..."
@@ -36,9 +42,9 @@ export const ChatMessageInput = ({ onSend }: ChatMessageInputProps) => {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-      <button className={styles.sendButton} onClick={handleSend}>
+      <button type="submit" className={styles.sendButton}>
         Send
       </button>
-    </div>
+    </form>
   );
 };
