@@ -19,7 +19,7 @@ The UNE Support System is a web-based application designed to provide support to
 
 - **Django**: Python-based web framework for building the backend.
 - **Django REST Framework**: For building RESTful APIs.
-- **OpenAI Agents**: For AI-powered responses.
+- **OpenAI Agents**: For AI-powered responses. Used `openai-agents-python` library.
 - **SQLite**: Lightweight database for development.
 
 ### Frontend
@@ -45,6 +45,8 @@ The UNE Support System is a web-based application designed to provide support to
 ---
 
 ## Setup Instructions
+
+> For demostration purpose, there is default one user is set up as logged in student `John Doe` and all messages will be sent by him
 
 ### Backend Setup
 
@@ -87,6 +89,7 @@ The UNE Support System is a web-based application designed to provide support to
    ```bash
    python manage.py runserver
    ```
+   The application will start at `http://127.0.0.1:8000`
 
 ### Frontend Setup
 
@@ -104,7 +107,7 @@ The UNE Support System is a web-based application designed to provide support to
 
 3. Set up the .env file:
 
-   - Ensure the `VITE_BASE_URL` in .env points to the backend server (e.g., `http://127.0.0.1:8000`).
+   - Ensure the `VITE_API_BASE_URL` in .env points to the backend server (e.g., `http://127.0.0.1:8000`).
 
 4. Start the frontend development server:
 
@@ -172,7 +175,3 @@ The UNE Support System is a web-based application designed to provide support to
 - **`src/api/`**: API services for interacting with the backend.
 
 ---
-
-## License
-
-This project is licensed under the MIT License.

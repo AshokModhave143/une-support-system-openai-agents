@@ -5,4 +5,4 @@ from .models import AiAgentsRequest
 class AgentRequestSerializer(serializers.ModelSerializer):
     class Meta:
         model = AiAgentsRequest
-        fields = ["message"]
+        fields = ["session_id", "message"]

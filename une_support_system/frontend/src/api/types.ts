@@ -1,8 +1,12 @@
+import { AxiosResponse } from "axios";
+import { ChatMessage } from "src/types/types";
+
 export interface ChatPostMessageRequest {
-    message: string;
+  session_id: string;
+  message: string;
 }
 export interface ChatPostMessageResponse {
-    agentName: string;
-    response: string;
-    error?: string;
+  status: AxiosResponse["status"];
+  data: ChatMessage | null;
+  error?: string | null;
 }

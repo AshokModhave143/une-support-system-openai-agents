@@ -5,7 +5,11 @@ import React, {
   PropsWithChildren,
 } from "react";
 import { ChatMessage, ChatMessageType } from "../types/types";
-import { getUniqueMessageId, getUniqueStudentId } from "../utils/getUniqueId";
+import {
+  getUniqueMessageId,
+  getUniqueSessionId,
+  getUniqueStudentId,
+} from "../utils/getUniqueId";
 
 export interface Student {
   id: string;
@@ -19,6 +23,7 @@ export interface Student {
 export interface ChatContextProps {
   messages: ChatMessage[];
   activeStudent: Student | null;
+  sessionId: string;
   addMessage?: (message: ChatMessage) => void;
 }
 
@@ -37,6 +42,7 @@ const studentList: Student[] = [
 const ChatContext = createContext<ChatContextProps>({
   messages: [],
   activeStudent: studentList[0],
+  sessionId: getUniqueSessionId(),
 });
 
 export interface ChatProviderProps extends PropsWithChildren {}
@@ -62,6 +68,7 @@ export const testMessages: ChatMessage[] = [
 ];
 
 export const ChatProvider = ({ children }: ChatProviderProps) => {
+  const [sessionId] = useState(getUniqueSessionId());
   const [messages, setMessages] = useState<ChatMessage[]>([]);
 
   const addMessage = (message: ChatMessage) => {
@@ -70,7 +77,7 @@ export const ChatProvider = ({ children }: ChatProviderProps) => {
 
   return (
     <ChatContext.Provider
-      value={{ messages, addMessage, activeStudent: studentList[0] }}
+      value={{ messages, addMessage, activeStudent: studentList[0], sessionId }}
     >
       {children}
     </ChatContext.Provider>

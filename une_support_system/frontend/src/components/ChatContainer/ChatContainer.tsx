@@ -10,14 +10,15 @@ import { useState } from "react";
 interface MessageContainerProps {}
 
 export const ChatContainer = (_props: MessageContainerProps) => {
-  const { addMessage, messages, activeStudent } = useChat();
+  const { addMessage, messages, activeStudent, sessionId } = useChat();
   const [error, setError] = useState<string | null>(null);
 
   const handleMessageSend = async (chatMessage: ChatMessage) => {
     setError(null);
     addMessage?.(chatMessage);
 
-    const response = await AiAgentsApiService.post(chatMessage.message);
+    const payload = { session_id: sessionId, message: chatMessage.message };
+    const response = await AiAgentsApiService.post(payload);
 
     if (response.error) {
       setError(response.error);
